@@ -5,7 +5,7 @@ export default function Questionario() {
     return <>
 
         <Questao
-            pergunta="A Terra é Plana?"
+            pergunta="A Terra é Plana?"       <--------propriedade
             resposta="não" />
 
         <Questao
@@ -18,4 +18,5 @@ export default function Questionario() {
 
 
     </>
+
 }
