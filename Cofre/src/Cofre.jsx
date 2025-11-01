@@ -12,12 +12,17 @@ export default function Cofre({senha}){
     const [Tecla2,setTecla2] = useState(0);
     const [Tecla3,setTecla3] = useState(0);
 
+    const [bloquear,setBloquear]=useState(false);
+
     const tecla1 = (contador) => {setTecla1(contador)}
     const tecla2 = (contador) => {setTecla2(contador)}
     const tecla3 = (contador) => {setTecla3(contador)}
     // console.log(senhaNumerica);
 
     const senhaDigitada = [Tecla1,Tecla2,Tecla3];
+
+
+
 
     const abrirCofre = ()=>{
 
@@ -33,8 +38,10 @@ export default function Cofre({senha}){
           setMensagem('Errou a Senha. Tentativas: ' + T)
         }
       }else{
-        setMensagem('Errou a Senha. Tentativas: ' + T)
-      }  
+        setMensagem('Errou a Senha. Tentativas: ' + T);
+      }else{
+      if(tentativas==0){
+      setBloquear(true);}}
     }
     console.log(tentativas)
     return (
@@ -45,7 +52,7 @@ export default function Cofre({senha}){
         <Tecla onGuardar={tecla2}/>
         <Tecla onGuardar={tecla3}/>
 
-        <button onClick={()=>abrirCofre()}>Abrir</button>
+        <button disabled={()=>bloquear} onClick={()=>abrirCofre()}>Abrir</button>
         </div>
         <div style={{textAlign:'center',padding:'10px'}}>
           Tentativas: {tentativas} <br />
