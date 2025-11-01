@@ -23,7 +23,7 @@ export default function Cofre({senha}){
 
       let T = tentativas;
 
-      if (T>0){
+      if (tentativas>0){
 
         const comparar = senhaNumerica.filter((e,i) => e === senhaDigitada[i]);
         if(comparar.length === senhaNumerica.length){
