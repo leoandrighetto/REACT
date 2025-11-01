@@ -37,11 +37,9 @@ export default function Cofre({senha}){
           setTentativas(T-1);
           setMensagem('Errou a Senha. Tentativas: ' + T)
         }
-      }else{
+      }else{if(tentativas==0){
         setMensagem('Errou a Senha. Tentativas: ' + T);
-      }else{
-      if(tentativas==0){
-      setBloquear(true);}}
+      setBloquear(true)}}
     }
     console.log(tentativas)
     return (
