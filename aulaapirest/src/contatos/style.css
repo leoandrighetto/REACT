@@ -1,0 +1,26 @@
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 30%;
+  font-family: sans-serif;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+tbody td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:hover {
+  background-color: #e5e5e5;
+}
