@@ -8,10 +8,10 @@ export default function Contatos(props) {
     const [contatoEditado, setContatoEditado] = useState(null)
     async function carregarDados() {
         console.log("Aqui");
-        let retorno = await axios.get(API + "/contatos/")
-        let contatosServidor = retorno.data
-        console.log(contatosServidor);
-        setContatos(contatosServidor)
+        let { data: contatos } = await axios.get(API + "/contatos/")
+       // let contatosServidor = retorno.data
+        console.log(contatos);
+        setContatos(contatos);
     }
     // useEffect faz alguma coisa (função) quando o componente MUDA.
     //SEMPRE USA ARROW FUNCTION QUE NÃO É ASSÍNCRONA, E CHAMA (CCHHAAMMAA) A FUNÇÃO.
